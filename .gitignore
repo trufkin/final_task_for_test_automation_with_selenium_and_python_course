@@ -130,7 +130,7 @@ dmypy.json
 
 
 # webdrivers
-
+chromedriver.exe
 
 # .idea conf files
 .idea/
