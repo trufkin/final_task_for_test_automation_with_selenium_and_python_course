@@ -18,6 +18,14 @@ class ProductPage(BasePage):
     def there_should_be_main_price(self):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_MAIN_PRICE), "Product main price label is missing"
 
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.ADDED_TO_BASKET_SUCCESS_MESSAGE), \
+            "Success message is present, but should not be"
+
+    def should_disappear_element_specified(self):
+        assert self.is_disappeared(*ProductPageLocators.ADDED_TO_BASKET_SUCCESS_MESSAGE), \
+            "Success message is present, but should not be"
+
     def add_product_to_basket(self):
         add_to_basket_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_to_basket_button.click()
