@@ -1,6 +1,7 @@
 import pytest
 from .pages.main_page import MainPage
 from .pages.basket_page import BasketPage
+from .pages.product_page import ProductPage
 import time
 
 @pytest.mark.login_guest
@@ -30,8 +31,11 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page.test_there_should_be_empty_basket_page()
 
 
-@pytest.mark.newcase
 def test_guest_can_see_product_in_basket_opened_from_main_page(browser):
+    product_url = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    product_page = ProductPage(browser, product_url)
+    product_page.open(browser, product_url)
+    product_page.add_product_to_basket()
     url = "http://selenium1py.pythonanywhere.com/"
     main_page = MainPage(browser, url)
     main_page.open(browser, url)

@@ -12,11 +12,14 @@ class BasketPage(BasePage):
         self.there_should_be_your_basket_total_table_row()
 
     def there_should_be_empty_basket_message(self):
-        assert self.is_element_present(*BasketPageLocators.EMPTY_BASKET_MESSAGE)
+        assert "Your basket is empty. Continue shopping" in \
+               self.get_element_text(*BasketPageLocators.EMPTY_BASKET_MESSAGE), \
+            "Message about empty basket is either is not present on the page or is incorrect"
 
     def there_should_be_no_empty_basket_message(self):
-        assert self.is_not_element_present(*BasketPageLocators.EMPTY_BASKET_MESSAGE), \
-            "Message about empty basket is present on the page"
+        assert "Your basket is empty. Continue shopping" not in \
+               self.get_element_text(*BasketPageLocators.EMPTY_BASKET_MESSAGE), \
+            "Message about empty basket is unexpectedly present on the page"
 
     def there_should_be_your_basket_total_table_row (self):
         assert "Basket total" in self.get_element_text(*BasketPageLocators.BASKET_TOTAL_TABLE_ROW), \
