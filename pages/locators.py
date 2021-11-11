@@ -2,18 +2,27 @@ from selenium.webdriver.common.by import By
 
 
 class BasePageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_invalid")
+    LOGIN_OR_REGISTER_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_OR_REGISTER_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_invalid")
     VIEW_BASKET_BUTTON = (By.CSS_SELECTOR, "a[href='/en-gb/basket/']")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
 
 class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_OR_REGISTER_LINK = (By.CSS_SELECTOR, "#login_link")
+    REGISTRATION_SUCCESS_MESSAGE_ELEMENT = (By.CSS_SELECTOR, ".alert.alert-success.fade.in")
+    REGISTRATION_SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alertinner.wicon")
 
 
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form.well")
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form.well")
+    LOGIN_EMAIL = (By.CSS_SELECTOR, "#id_login-username")
+    LOGIN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
+    REGISTER_EMAIL_ADDRESS = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTER_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTER_CONFIRM_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTER_BUTTON = (By.CSS_SELECTOR, "button[name='registration_submit'].btn.btn-lg.btn-primary")
 
 
 class ProductPageLocators:

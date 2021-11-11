@@ -18,7 +18,7 @@ class BasePage():
         self.browser.get(self.url)
 
     def go_to_login_page(self):
-        login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        login_link = self.browser.find_element(*BasePageLocators.LOGIN_OR_REGISTER_LINK)
         login_link.click()
 
     def go_to_basket_page(self):
@@ -26,7 +26,7 @@ class BasePage():
         view_basket_button.click()
 
     def there_should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not present"
+        assert self.is_element_present(*BasePageLocators.LOGIN_OR_REGISTER_LINK), "Login link is not present"
 
     # is_element_present checks if an element is present on the page loaded - returns True if element is found
     # and False when element is not found
@@ -76,3 +76,7 @@ class BasePage():
     def get_element_text(self, how, what):
         element_text = self.browser.find_element(how, what).text
         return element_text
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"

@@ -39,5 +39,5 @@ class ProductPage(BasePage):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text.strip()
         add_to_basket_success_message = self.browser.find_element(
             *ProductPageLocators.ADDED_TO_BASKET_SUCCESS_MESSAGE).text.strip()
-        assert product_name == add_to_basket_success_message, "Product name specified in the success message and name " \
-                                                              "of added product are not the same "
+        assert product_name == add_to_basket_success_message, \
+            "Product name specified in the success message and name of added product are not the same "
