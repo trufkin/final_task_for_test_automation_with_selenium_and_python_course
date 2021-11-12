@@ -36,6 +36,6 @@ class ProductPageLocators:
 
 
 class BasketPageLocators:
-    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner p")
+    EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "#content_inner>p")
     BASKET_PAGE_TITLE = (By.CSS_SELECTOR, ".page-header.action h1")
     BASKET_TOTAL_TABLE_ROW = (By.CSS_SELECTOR, "#basket_totals .total")
