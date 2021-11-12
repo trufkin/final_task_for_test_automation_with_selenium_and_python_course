@@ -4,7 +4,7 @@ from .pages.basket_page import BasketPage
 from .pages.login_page import LoginPage
 import time
 
-
+"""
 @pytest.mark.parametrize('url', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
@@ -17,8 +17,10 @@ import time
                                      marks=pytest.mark.xfail),
                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
+"""
 @pytest.mark.need_review
-def test_guest_can_add_product_to_basket(browser, url):
+def test_guest_can_add_product_to_basket(browser):
+    url = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0"
     page = ProductPage(browser, url)
     page.open(browser, url)
     page.there_should_be_product_page()
